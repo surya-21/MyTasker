@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <ul>
+    <% taskscollection.forEach(details=> { %>
+      <% if(details._id==idupdate){ %>
+        <li>
+          <div class="task-container">
+          <form action="/edit/<%= details._id %>" method="POST">
+            <input type="text" value="<%= details.content %>" name="task">
+            <input type="submit" value="Update" />
+            <a href="/" class="cancel">
+              <span class="fa-solid fa-xmark"></span>
+            </a>
+
+          </form>
+        </div>
+        </li>
+        <% } %>
+<% }) %>
+  </ul>
+  <script src="https://kit.fontawesome.com/22c635bd71.js" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

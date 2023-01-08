@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> MyTasker </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+   
+  </head>
+  <body>
+    <div class="task-container">  
+    <h2>MY TASKER </h2> <br><br>
+    <div class = "add-task-container"> 
+    <form method="POST" action="submit">
+      <input class="q1" type="text" name="task">
+      <input class="q1" type="submit" value="Add">
+    </form>
+    </div>
+    <ul>
+      <% taskscollection.forEach(details=> {%>
+          <li>
+            <div>
+              <%= details.content %>
+              <a href="/edit/<%= details._id %>" class="remove"><i class="fa-solid fa-pen"></i></a>
+              <a href="/remove/<%= details._id %>" class="remove"><i class="fa-solid fa-trash"></i></a>
+            </div>
+          </li>
+          <% }) %>
+    </ul> 
+  </div>
+  <script src="https://kit.fontawesome.com/22c635bd71.js" crossorigin="anonymous"></script>
+  </body>
+</html>
+
